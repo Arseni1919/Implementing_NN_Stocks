@@ -154,8 +154,8 @@ def run_simple_nn(x, y, train_percentage=0.8):
             losses_val_values = []
             for i, i_batch in enumerate(X_val_tensors_final):
                 outputs = net(i_batch)  # forward pass
-                y_train_tensor = y_train_tensors[i]
-                loss = criterion(outputs, y_train_tensor)
+                y_val_tensor = y_val_tensors[i]
+                loss = criterion(outputs, y_val_tensor)
                 losses_val_values.append(loss.item())
             losses_val.append(np.mean(losses_val_values))
 
